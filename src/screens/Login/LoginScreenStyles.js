@@ -1,0 +1,19 @@
+import COLORS from '../../utils/Colors'
+export const styles = {
+  container: {
+    width: '100%',
+    height: '700px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column'
+  },
+  cardStyle: {
+    width: '500px',
+    height: '400px',
+    borderRadius: '10px',
+    backgroundColor: COLORS.CARD_COLOR
+  },
+  customButtonStyle: { width: '200px', marginTop: '30px', height: '50px' }
+
+};

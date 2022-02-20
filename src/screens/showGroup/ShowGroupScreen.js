@@ -1,3 +1,4 @@
+import { Card } from '@material-ui/core';
 import { DataGrid } from '@material-ui/data-grid';
 import { useState } from 'react';
 import showGroupColumns from '../../utils/ShowGroupColumnNames';
@@ -9,15 +10,17 @@ const ShowGroupScreen =()=>{
     const [rows,setRows] = useState(getDummyGroups()) 
     return(
         <div style={styles.parentView}>
-           <div style={styles.gridView}>
+           <Card style={styles.gridView}>
           <DataGrid
+          
             rows={rows}
             columns ={showGroupColumns}
             pageSize={10}
             checkboxSelection
+            disableColumnMenu
             disableSelectionOnClick
           />
-            </div>
+            </Card>
             </div>
     )
 }

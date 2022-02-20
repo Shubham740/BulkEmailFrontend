@@ -2,14 +2,14 @@ import { DataGrid } from '@material-ui/data-grid';
 import { useState } from 'react';
 import showGroupColumns from '../../utils/ShowGroupColumnNames';
 import { getDummyGroups } from '../../utils/Utils';
-
+import styles from './ShowGroupScreenStyles'
 
 const ShowGroupScreen =()=>{
 
     const [rows,setRows] = useState(getDummyGroups()) 
     return(
-        <div style={{alignItems:'center',display:'flex', justifyContent:"center"}}>
-           <div style={{ height: 650, width: '80%',alignSelf:'center',marginTop:'25px'}}>
+        <div style={styles.parentView}>
+           <div style={styles.gridView}>
           <DataGrid
             rows={rows}
             columns ={showGroupColumns}

@@ -7,6 +7,7 @@ import Dashboard from './screens/dashboard/Dashboard';
 
 import LoginScreen from './screens/Login/LoginScreen'
 import SendEmailScreen from './screens/sendEmail/SendEmailScreen';
+import ShowGroupScreen from './screens/showGroup/ShowGroupScreen';
 import SignupScreen from './screens/signup/SignupScreen';
 
 
@@ -20,10 +21,7 @@ const App = ()=>{
               <Route exact path='/addGroup' component={AddGroupScreen} />
               <Route exact path='/addEmail' component={AddEmailScreen} />
               <Route exact path='/sendEmail' component={SendEmailScreen} />
-              <Route exact path='/drawer' component={DrawerScreen} />
-              <Route exact path='/showGroup' component={DrawerScreen} />
-
-   
+              <Route exact path='/showGroup' component={ShowGroupScreen} />
           </Switch>
       </div>
   )

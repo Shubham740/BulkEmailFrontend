@@ -19,7 +19,6 @@ const Dashboard =()=>{
                      console.log("menu icon clicked")
                     setIsNavigatorOpen(true)
                 }}
-               
                />
                <Typography variant="h4" style={styles.title}>
                 Dashboard

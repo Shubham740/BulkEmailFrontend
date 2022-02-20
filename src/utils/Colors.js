@@ -5,6 +5,7 @@ const COLORS={
     SECONDARY:'#69f0ae',
     WHITE:'#ffffff',
     GRADIENT_GREEN:'rgb(125,226,97)',
-    BLUE:'#538ec3'
+    BLUE:'#538ec3',
+    GREY:"grey",
 }
 export default COLORS;

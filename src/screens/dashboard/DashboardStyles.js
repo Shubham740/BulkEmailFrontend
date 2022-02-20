@@ -14,7 +14,7 @@ const styles = {
 
   title: {
     flexGrow: "1",
-    color:COLORS.SECONDARY,
+    color:COLORS.WHITE,
     cursor: "pointer",
     marginLeft: '10px',
     fontSize: '40px'
@@ -23,11 +23,11 @@ const styles = {
     alignSelf: 'center',
     width: '40px',
     fontSize: '30px',
-    color:COLORS.SECONDARY,
+    color:COLORS.WHITE,
   },
   link: {
     textDecoration: "none",
-    color:COLORS.SECONDARY,
+    color:COLORS.WHITE,
     alignSelf: 'center',
     fontSize: "20px",
     marginRight: '20px',

@@ -34,7 +34,6 @@ const LoginScreen = () => {
                     }}
                 />
                 <CustomButton title={STRINGS.LOGIN}
-                    isSecondary= {true}
                     customStyle={styles.customButtonStyle}
                         onClick ={()=>{
                             alert(email+password)

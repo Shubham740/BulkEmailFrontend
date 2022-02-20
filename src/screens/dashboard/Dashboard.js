@@ -11,16 +11,17 @@ const Dashboard =()=>{
 
         return(<div >
            <AppBar position='static'>
-               <div style={{display:'flex',flexDirection:'row'}}>
+               <div style={styles.parentView}>
                <CssBaseline/>
                <MenuIcon
+               style={styles.logo}
                  onClick ={()=>{
                      console.log("menu icon clicked")
                     setIsNavigatorOpen(true)
                 }}
                
                />
-               <Typography variant="h4" style={styles.logo}>
+               <Typography variant="h4" style={styles.title}>
                 Dashboard
                 </Typography>
                 <DrawerScreen
@@ -34,7 +35,7 @@ const Dashboard =()=>{
               Add Group
             </Link>
             <Link to="/addEmail" style={styles.link}>
-              Ad Email
+              Add Email
             </Link>
             <Link to="/addGroup" style={styles.link}>
               Send Email

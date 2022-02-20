@@ -7,15 +7,8 @@ import MailIcon from '@material-ui/icons/Mail';
 
 import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import { Link } from 'react-router-dom';
+import styles from './DrawerScreenStyles';
 
-const useStyles = makeStyles({
-    list: {
-        width: 450,
-    },
-    fullList: {
-        width: 'auto',
-    },
-});
 
 const DrawerScreen = (props) => {
     const [state, setState] = React.useState(props.isNavigatorOpen);
@@ -41,12 +34,15 @@ const DrawerScreen = (props) => {
         >
             <List>
                 <ListItem button key={"Add Group"}
+            
                     component={Link} to={"/addGroup"}
                     onClick={() => {
                         props.drawerCallback(false)
                     }}
                 >
-                    <ListItemIcon>{<GroupAddIcon />
+                    <ListItemIcon
+                        
+                    >{<GroupAddIcon />
                     }</ListItemIcon>
                     <ListItemText primary={'Add Group'} />
                 </ListItem>

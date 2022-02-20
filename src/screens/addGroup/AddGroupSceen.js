@@ -1,7 +1,6 @@
 
 
 const AddGroupScreen =()=>{
-
     return(
         <div>
             

@@ -9,6 +9,7 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import { Link } from 'react-router-dom';
 import styles from './DrawerScreenStyles';
 import COLORS from '../../utils/Colors';
+import EmailIcon from '@material-ui/icons/Email';
 
 
 const DrawerScreen = (props) => {
@@ -51,6 +52,24 @@ const DrawerScreen = (props) => {
                     <ListItemText primary={'Add Group'} style={selectedIndex == 0 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }} />
                 </ListItem>
 
+                <ListItem button key={"Show Group"}
+                    selected={selectedIndex === 0}
+                    component={Link} to={"/showGroup"}
+                    onClick={() => {
+                        setSelectedIndex(3)
+                        props.drawerCallback(false)
+                    }}
+                >
+                    <ListItemIcon
+                    >{<GroupAddIcon
+                        style={selectedIndex == 3 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }}
+                    />
+                        }</ListItemIcon>
+                    <ListItemText primary={'Show Group'} style={selectedIndex == 3 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }} />
+                </ListItem>
+
+
+
                 <ListItem button key={"Add Email"}
                     component={Link} to={"/addEmail"}
 
@@ -59,7 +78,7 @@ const DrawerScreen = (props) => {
                         props.drawerCallback(false)
                     }}
                 >
-                    <ListItemIcon style={selectedIndex == 1 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }}>{<GroupAddIcon />
+                    <ListItemIcon style={selectedIndex == 1 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }}>{<EmailIcon />
                     }</ListItemIcon>
                     <ListItemText primary={"Add Email"} style={selectedIndex == 1 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }} />
                 </ListItem>
@@ -70,7 +89,7 @@ const DrawerScreen = (props) => {
                         setSelectedIndex(2);
                         props.drawerCallback(false)
                     }}>
-                    <ListItemIcon style={selectedIndex == 2 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }}>{<GroupAddIcon />
+                    <ListItemIcon style={selectedIndex == 2 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }}>{<EmailIcon />
                     }</ListItemIcon>
                     <ListItemText primary={"Send Email"} style={selectedIndex == 2 ? { color: COLORS.PRIMARY } : { color: COLORS.GREY }} />
                 </ListItem>

@@ -21,6 +21,7 @@ const App = ()=>{
               <Route exact path='/addEmail' component={AddEmailScreen} />
               <Route exact path='/sendEmail' component={SendEmailScreen} />
               <Route exact path='/drawer' component={DrawerScreen} />
+              <Route exact path='/showGroup' component={DrawerScreen} />
 
    
           </Switch>

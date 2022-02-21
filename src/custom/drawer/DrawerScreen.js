@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import styles from './DrawerScreenStyles';
 import COLORS from '../../utils/Colors';
 import EmailIcon from '@material-ui/icons/Email';
-
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
 
 const DrawerScreen = (props) => {
     const [state, setState] = React.useState(props.isNavigatorOpen);
@@ -98,9 +98,9 @@ const DrawerScreen = (props) => {
             </List>
             <Divider />
             <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
+                {['My Profile', 'Edit Profile'].map((text, index) => (
                     <ListItem button key={text}>
-                        <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                        <ListItemIcon>{index % 2 === 0 ? <AccountBoxIcon /> : <AccountBoxIcon />}</ListItemIcon>
                         <ListItemText primary={text} />
                     </ListItem>
                 ))}

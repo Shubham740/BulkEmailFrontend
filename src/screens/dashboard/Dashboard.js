@@ -4,6 +4,7 @@ import DrawerScreen from '../../custom/drawer/DrawerScreen';
 import styles from './DashboardStyles'
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from 'react';
+import IMAGES from '../../assets/Images';
 
 const Dashboard =()=>{
 
@@ -20,6 +21,7 @@ const Dashboard =()=>{
                     setIsNavigatorOpen(true)
                 }}
                />
+               <img src={IMAGES.LOGO} style={styles.logoImage}/>
                <Typography variant="h4" style={styles.title}>
                 Dashboard
                 </Typography>
@@ -38,7 +40,7 @@ const Dashboard =()=>{
             </Link>
             <Link to="/addGroup" style={styles.link}>
               Send Email
-            </Link>
+          </Link>
                    </div>
                    </div>
            </AppBar>

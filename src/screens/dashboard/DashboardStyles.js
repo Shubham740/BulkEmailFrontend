@@ -7,15 +7,24 @@ const styles = {
     marginLeft: '10px',
   },
   parentView: { 
-    display: 'flex', 
+    display: 'flex',
+    height:'70px', 
   flexDirection: 'row',
    backgroundColor: COLORS.PRIMARY
    },
 
+   logoImage:{
+     width:'200px', 
+     height:'50px',
+      alignSelf:'center',
+       marginLeft:'10px'
+      },
+   
   title: {
     flexGrow: "1",
     color:COLORS.WHITE,
     cursor: "pointer",
+    alignSelf:'center',
     marginLeft: '10px',
     fontSize: '40px'
   },

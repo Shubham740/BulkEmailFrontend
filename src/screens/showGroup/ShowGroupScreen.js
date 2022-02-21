@@ -12,7 +12,6 @@ const ShowGroupScreen =()=>{
         <div style={styles.parentView}>
            <Card style={styles.gridView}>
           <DataGrid
-          
             rows={rows}
             columns ={showGroupColumns}
             pageSize={10}

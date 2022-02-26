@@ -1,5 +1,6 @@
 import axios from "axios";
 import ApiUrls from "../utils/ApiUrls";
+import authHeader from "./DataService";
 
 
 class AuthService {
@@ -16,11 +17,35 @@ class AuthService {
         })
     }
 
+
     logout() {
         localStorage.removeItem("token")
         localStorage.removeItem("user")
     }
 
+    post(body, url){
+        let header = authHeader();
+        let finalUrl = ApiUrls.BASE_URL + url;
+        return axios.post(finalUrl, body,{
+            headers:header
+        }).then(response => {
+            
+            return response.data;
+        })
+    }
+
+    get(url){
+        let header = authHeader();
+        let finalUrl = ApiUrls.BASE_URL + url;
+            return axios.get(finalUrl,{
+                headers:header
+            }).then(response=>{
+                return response.data;
+            })
+    }
+
+
+    
 }
 
 

@@ -25,3 +25,14 @@ export function getDummyGroups(){
     return rows;
 }
 
+
+export function isLogin(){
+   const token= localStorage.getItem('token')
+    return token!=null?true:false
+}
+
+export function logout(){
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('user')
+}

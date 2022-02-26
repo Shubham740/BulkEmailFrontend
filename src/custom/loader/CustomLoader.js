@@ -7,6 +7,7 @@ const CustomLoader =({isLoading})=>{
     return (
         <div>
             {isLoading==true? <Loader  bgColor ={COLORS.PRIMARY} 
+                    
             /> : <> </>  }
         </div>
     )

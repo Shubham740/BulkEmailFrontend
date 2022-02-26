@@ -6,25 +6,25 @@ const styles = {
     display: "flex",
     marginLeft: '10px',
   },
-  parentView: { 
+  parentView: {
     display: 'flex',
-    height:'70px', 
-  flexDirection: 'row',
-   backgroundColor: COLORS.PRIMARY
-   },
+    height: '70px',
+    flexDirection: 'row',
+    backgroundColor: COLORS.PRIMARY
+  },
 
-   logoImage:{
-     width:'200px', 
-     height:'50px',
-      alignSelf:'center',
-       marginLeft:'10px'
-      },
-   
+  logoImage: {
+    width: '200px',
+    height: '50px',
+    alignSelf: 'center',
+    marginLeft: '10px'
+  },
+
   title: {
     flexGrow: "1",
-    color:COLORS.WHITE,
+    color: COLORS.WHITE,
     cursor: "pointer",
-    alignSelf:'center',
+    alignSelf: 'center',
     marginLeft: '10px',
     fontSize: '40px'
   },
@@ -32,11 +32,16 @@ const styles = {
     alignSelf: 'center',
     width: '40px',
     fontSize: '30px',
-    color:COLORS.WHITE,
+    color: COLORS.WHITE,
+  },
+  signOut: {
+    alignSelf: 'center',
+    marginLeft: '10px',
+    marginRight: '10px',
   },
   link: {
     textDecoration: "none",
-    color:COLORS.WHITE,
+    color: COLORS.WHITE,
     alignSelf: 'center',
     fontSize: "20px",
     marginRight: '20px',

@@ -1,5 +1,5 @@
 import { Card } from '@material-ui/core';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CustomButton from '../../custom/button/CustomButton';
 import CustomInput from '../../custom/input/CustomInput';
 import CustomLogo from '../../custom/logo/CustomLogo';
@@ -8,8 +8,17 @@ import STRINGS from '../../utils/Strings';
 import { styles } from './LoginScreenStyles'
 import COLORS from '../../utils/Colors';
 import CustomLoader from '../../custom/loader/CustomLoader';
+import { useHistory } from "react-router-dom";
+import { isLogin } from '../../utils/Utils';
 
 const LoginScreen = () => {
+    const history = useHistory();
+
+    useEffect(()=>{
+        if(isLogin()){
+            history.push('/dashboard')
+       }
+    },[])
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
@@ -26,7 +35,10 @@ const LoginScreen = () => {
                             setEmail(event.target.value)
                     }}
                />
+               <div style={{position: 'absolute', marginLeft:'200px'}}>
             <CustomLoader  isLoading ={isLoading}/>
+
+               </div>
                 <CustomInput
                     customStyle={{ marginTop: '30px' }}
                     label={STRINGS.PLEASE_ENTER_PASSWORD}

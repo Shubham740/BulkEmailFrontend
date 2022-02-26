@@ -7,9 +7,9 @@ class AuthService {
         let url = ApiUrls.BASE_URL + ApiUrls.LOGIN;
 
         return axios.post(url, body).then(response => {
-            if (response.token) {
-                localStorage.setItem("token", response.token)
-                localStorage.setItem("user", response.data)
+            if (response.data.token) {
+                localStorage.setItem("token", response.data.token)
+                localStorage.setItem("user", response.data.token)
 
             }
             return response.data;

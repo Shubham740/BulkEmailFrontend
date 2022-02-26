@@ -5,8 +5,13 @@ import styles from './DashboardStyles'
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from 'react';
 import IMAGES from '../../assets/Images';
+import ExitToAppIcon from  '@material-ui/icons/ExitToAppSharp';
+import { logout } from '../../utils/Utils';
+import { useHistory } from "react-router-dom";
+
 
 const Dashboard =()=>{
+  const history = useHistory();
 
     const [isNavigatorOpen, setIsNavigatorOpen] = useState(false)
 
@@ -41,7 +46,19 @@ const Dashboard =()=>{
             <Link to="/addGroup" style={styles.link}>
               Send Email
           </Link>
+                <div style={styles.signOut}>
+          <ExitToAppIcon
+          style ={{fontSize:'30px'}}
+          onClick ={(event)=>{
+              logout();  
+              window.location.href = '/';
+          }}
+          />
+
+                </div>
+
                    </div>
+
                    </div>
            </AppBar>
         </div>)

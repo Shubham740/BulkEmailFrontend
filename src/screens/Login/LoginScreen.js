@@ -56,6 +56,7 @@ const LoginScreen = () => {
                                 AuthService.login(body).then(response=>{
                                     setIsLoading(false)
                                     console.log("login Response=>>>", response)
+                                    history.push('/dashboard')
                                 })
 }}
 />

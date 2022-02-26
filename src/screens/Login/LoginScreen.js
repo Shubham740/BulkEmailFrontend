@@ -3,6 +3,7 @@ import { useState } from 'react';
 import CustomButton from '../../custom/button/CustomButton';
 import CustomInput from '../../custom/input/CustomInput';
 import CustomLogo from '../../custom/logo/CustomLogo';
+import AuthService from '../../services/AuthService';
 import STRINGS from '../../utils/Strings';
 import { styles } from './LoginScreenStyles'
 
@@ -36,8 +37,11 @@ const LoginScreen = () => {
                 <CustomButton title={STRINGS.LOGIN}
                     customStyle={styles.customButtonStyle}
                         onClick ={()=>{
-                            alert(email+password)
-                        }}
+                                const body = {email:'abc@mailinator.com', password:'user@123'}
+                                AuthService.login(body).then(response=>{
+                                    console.log("login Response=>>>", response)
+                                })
+}}
 />
             </Card>
 

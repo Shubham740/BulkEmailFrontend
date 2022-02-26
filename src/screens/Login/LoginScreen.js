@@ -6,13 +6,14 @@ import CustomLogo from '../../custom/logo/CustomLogo';
 import AuthService from '../../services/AuthService';
 import STRINGS from '../../utils/Strings';
 import { styles } from './LoginScreenStyles'
-
+import COLORS from '../../utils/Colors';
+import CustomLoader from '../../custom/loader/CustomLoader';
 
 const LoginScreen = () => {
 
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
-
+    const [isLoading,setIsLoading] = useState(false)
     return (
         <div style={styles.container}>
             <Card style={styles.cardStyle}>
@@ -25,6 +26,7 @@ const LoginScreen = () => {
                             setEmail(event.target.value)
                     }}
                />
+            <CustomLoader  isLoading ={isLoading}/>
                 <CustomInput
                     customStyle={{ marginTop: '30px' }}
                     label={STRINGS.PLEASE_ENTER_PASSWORD}
@@ -37,8 +39,10 @@ const LoginScreen = () => {
                 <CustomButton title={STRINGS.LOGIN}
                     customStyle={styles.customButtonStyle}
                         onClick ={()=>{
+                            setIsLoading(true)
                                 const body = {email:'abc@mailinator.com', password:'user@123'}
                                 AuthService.login(body).then(response=>{
+                                    setIsLoading(false)
                                     console.log("login Response=>>>", response)
                                 })
 }}

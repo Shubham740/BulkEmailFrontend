@@ -8,6 +8,7 @@ import CustomButton from "../../custom/button/CustomButton";
 const OtpVerifyScreen = () => {
 
         const [otp,setOtp] = useState("");
+
         const handleChange = (otp) => setOtp(otp);
 
     return (

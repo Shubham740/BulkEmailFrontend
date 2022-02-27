@@ -1,6 +1,4 @@
-
-
-const styles={
+const styles ={
     textBox: {
         width: '90%',
         marginTop: '15px',
@@ -8,13 +6,6 @@ const styles={
         marginRight: '40px',
        
       },
-      underline: {
-        color: 'red' ,
-        '&::after': {
-          border: '2px solid red'
-        }
-      }
-   
 }
 
 export default styles;

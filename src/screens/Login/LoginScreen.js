@@ -73,7 +73,7 @@ const LoginScreen = () => {
                             setPassword(event.target.value)
                     }}
                 />
-                <CustomButton title={STRINGS.LOGIN}
+            <CustomButton title={STRINGS.LOGIN}
                     customStyle={styles.customButtonStyle}
                         onClick ={()=>{
                     callLoginApi()                            

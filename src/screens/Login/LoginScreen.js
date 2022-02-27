@@ -10,19 +10,17 @@ import COLORS from '../../utils/Colors';
 import CustomLoader from '../../custom/loader/CustomLoader';
 import { useHistory } from "react-router-dom";
 import { isLogin } from '../../utils/Utils';
+import { useDispatch } from 'react-redux'
+import { setEmailId } from '../../redux/actions/LoginAction';
 
 const LoginScreen = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
 
-    const callLoginApi =()=>{
-        setIsLoading(true)
-        const body = {email:'abc@mailinator.com', password:'user@123'}
-        AuthService.login(body).then(response=>{
-            console.log("response=>>",response)
-            setIsLoading(false)
-            history.push('/dashboard')
-        })
-    }
+    const [email,setEmail] = useState("")
+    const [password,setPassword] = useState("")
+    const [isLoading,setIsLoading] = useState(false)
+
 
     useEffect(()=>{
         if(isLogin()){
@@ -30,9 +28,20 @@ const LoginScreen = () => {
        }
     },[])
 
-    const [email,setEmail] = useState("")
-    const [password,setPassword] = useState("")
-    const [isLoading,setIsLoading] = useState(false)
+
+    const callLoginApi =()=>{
+        setIsLoading(true)
+        const body = {email:'abc@mailinator.com', password:'user@123'}
+        AuthService.login(body).then(response=>{
+            dispatch(setEmailId("abc@mailinator.com"))
+            console.log("response=>>",response)
+            setIsLoading(false)
+            history.push('/dashboard')
+        })
+    }
+
+    
+   
     return (
         <div style={styles.container}>
             <Card style={styles.cardStyle}>

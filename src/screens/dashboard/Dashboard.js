@@ -3,17 +3,24 @@ import { Link } from 'react-router-dom';
 import DrawerScreen from '../../custom/drawer/DrawerScreen';
 import styles from './DashboardStyles'
 import MenuIcon from '@material-ui/icons/Menu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import IMAGES from '../../assets/Images';
 import ExitToAppIcon from '@material-ui/icons/ExitToAppSharp';
 import { logout } from '../../utils/Utils';
 import { useHistory } from "react-router-dom";
+import { useSelector } from 'react-redux'
 
 
 const Dashboard = () => {
   const history = useHistory();
 
   const [isNavigatorOpen, setIsNavigatorOpen] = useState(false)
+
+  const emailId = useSelector(state => state.LoginReducer.email)
+  
+  useEffect(()=>{
+      console.log("emailId=>>>",emailId)
+  },[emailId])
 
   return (<div >
     

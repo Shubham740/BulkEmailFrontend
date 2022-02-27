@@ -1,6 +1,7 @@
 import IMAGES from '../../assets/Images';
 import COLORS from '../../utils/Colors'
 export const styles = {
+  
   container: {
     width: '100%',
     height: '700px',

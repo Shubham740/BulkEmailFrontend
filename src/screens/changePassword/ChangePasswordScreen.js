@@ -21,10 +21,24 @@ const ChangePasswordScreen = () => {
                 <CustomInput
                     label={"Please enter new Password"}
                     type={"password"}
+                    onPaste={(e)=>{
+                        e.preventDefault()
+                        return false;
+                      }} onCopy={(e)=>{
+                        e.preventDefault()
+                        return false;
+                      }}
 />
                 <CustomInput
                     label={"Please confirm new Password"}
                     type={"password"}
+                    onPaste={(e)=>{
+                        e.preventDefault()
+                        return false;
+                      }} onCopy={(e)=>{
+                        e.preventDefault()
+                        return false;
+                      }}
                 />
                 <CustomButton title={"Apply"}
                     customStyle={styles.customButtonStyle}
@@ -33,6 +47,7 @@ const ChangePasswordScreen = () => {
                 <CustomButton title={"Cancel"}
                     customStyle={styles.customButtonStyle}
                     isSecondary={true}
+                  
                 />
             </Card>
         </div>

@@ -1,9 +1,10 @@
 import { Snackbar } from "@material-ui/core"
 import { useEffect, useState } from "react"
 import MuiAlert from '@material-ui/lab/Alert';
+
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
-  }
+}
 
 const CustomSnackbar = ({ message }) => {
 
@@ -19,21 +20,21 @@ const CustomSnackbar = ({ message }) => {
     }, [open])
 
     useEffect(() => {
-            if(message.length>0){
+        if (message.length > 0) {
             setOpen(true)
-            }
+        }
     }, [message])
-    
-    return(
-        
-    < Snackbar
-    open = { open }
-    message = { message }
+
+    return (
+
+        < Snackbar
+            open={open}
+            message={message}
         >
-             <Alert  severity="success">
-         {message}
-        </Alert>
-            </Snackbar>
+            <Alert severity="success">
+                {message}
+            </Alert>
+        </Snackbar>
     )
 }
 export default CustomSnackbar;

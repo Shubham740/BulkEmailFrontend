@@ -5,7 +5,7 @@ import COLORS from "../../utils/Colors";
 
 const CustomLoader =({isLoading})=>{
     return (
-        <div>
+        <div >
             {isLoading==true? <Loader  bgColor ={COLORS.PRIMARY} 
                     
             /> : <> </>  }

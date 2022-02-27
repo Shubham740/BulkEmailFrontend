@@ -48,6 +48,10 @@ const LoginScreen = () => {
    
     return (
         <div style={styles.container}>
+               <div style={{position: 'absolute', width:'100%'}}>
+            <CustomLoader  isLoading ={isLoading}/>
+            </div>
+
             <CustomSnackbar message={message} />
             <Card style={styles.cardStyle}>
                 <CustomLogo title={STRINGS.LOGIN} />
@@ -59,10 +63,6 @@ const LoginScreen = () => {
                             setEmail(event.target.value)
                     }}
                />
-               <div style={{position: 'absolute', marginLeft:'200px'}}>
-            <CustomLoader  isLoading ={isLoading}/>
-
-               </div>
                 <CustomInput
                     customStyle={{ marginTop: '30px' }}
                     label={STRINGS.PLEASE_ENTER_PASSWORD}

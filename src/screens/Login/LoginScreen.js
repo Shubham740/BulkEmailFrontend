@@ -12,6 +12,7 @@ import { useHistory } from "react-router-dom";
 import { isLogin } from '../../utils/Utils';
 import { useDispatch } from 'react-redux'
 import { setEmailId } from '../../redux/actions/LoginAction';
+import CustomSnackbar from '../../custom/snackbar/CustomSnackbar';
 
 const LoginScreen = () => {
     const history = useHistory();
@@ -20,7 +21,7 @@ const LoginScreen = () => {
     const [email,setEmail] = useState("")
     const [password,setPassword] = useState("")
     const [isLoading,setIsLoading] = useState(false)
-
+    const [message, setMessage] = useState("")
 
     useEffect(()=>{
         if(isLogin()){
@@ -33,10 +34,13 @@ const LoginScreen = () => {
         setIsLoading(true)
         const body = {email:'abc@mailinator.com', password:'user@123'}
         AuthService.login(body).then(response=>{
-            dispatch(setEmailId("abc@mailinator.com"))
-            console.log("response=>>",response)
             setIsLoading(false)
-            history.push('/dashboard')
+            setMessage("Login Successfully")
+            setTimeout(()=>{
+                dispatch(setEmailId("abc@mailinator.com"))
+                console.log("response=>>",response)
+                history.push('/dashboard')
+            },2000)
         })
     }
 
@@ -44,6 +48,7 @@ const LoginScreen = () => {
    
     return (
         <div style={styles.container}>
+            <CustomSnackbar message={message} />
             <Card style={styles.cardStyle}>
                 <CustomLogo title={STRINGS.LOGIN} />
                 <CustomInput

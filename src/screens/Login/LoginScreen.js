@@ -14,6 +14,16 @@ import { isLogin } from '../../utils/Utils';
 const LoginScreen = () => {
     const history = useHistory();
 
+    const callLoginApi =()=>{
+        setIsLoading(true)
+        const body = {email:'abc@mailinator.com', password:'user@123'}
+        AuthService.login(body).then(response=>{
+            console.log("response=>>",response)
+            setIsLoading(false)
+            history.push('/dashboard')
+        })
+    }
+
     useEffect(()=>{
         if(isLogin()){
             history.push('/dashboard')
@@ -51,13 +61,7 @@ const LoginScreen = () => {
                 <CustomButton title={STRINGS.LOGIN}
                     customStyle={styles.customButtonStyle}
                         onClick ={()=>{
-                            setIsLoading(true)
-                                const body = {email:'abc@mailinator.com', password:'user@123'}
-                                AuthService.login(body).then(response=>{
-                                    setIsLoading(false)
-                                    console.log("login Response=>>>", response)
-                                    history.push('/dashboard')
-                                })
+                    callLoginApi()                            
 }}
 />
             </Card>

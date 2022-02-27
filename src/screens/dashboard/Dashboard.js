@@ -16,6 +16,7 @@ const Dashboard = () => {
   const [isNavigatorOpen, setIsNavigatorOpen] = useState(false)
 
   return (<div >
+    
     <AppBar position='static'>
       <div style={styles.parentView}>
         <CssBaseline />

@@ -1,5 +1,6 @@
 import { Drawer } from '@material-ui/core';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import IMAGES from './assets/Images';
 import DrawerScreen from './custom/drawer/DrawerScreen';
 import PrivateRoutes from './routes/PrivateRoutes';
 import AddEmailScreen from './screens/addEmailId/AddEmailScreen';
@@ -9,11 +10,11 @@ import LoginScreen from './screens/Login/LoginScreen'
 import SendEmailScreen from './screens/sendEmail/SendEmailScreen';
 import ShowGroupScreen from './screens/showGroup/ShowGroupScreen';
 import SignupScreen from './screens/signup/SignupScreen';
-
+import styles from './styles'
 
 const App = ()=>{
   return(
-    <div>
+    <div style={styles.parentBackground}>
       <Dashboard/>
       <Switch>
 

@@ -33,7 +33,6 @@ const OtpVerifyScreen = () => {
                     <p style={{...styles.otpMessage,marginTop:'18px'}}>Resend One-Time Password</p>
                     <p style={styles.oneTimeMessage}>Entered a wrong number?</p>
 
-
                 </div>
             </Card>
         </div>

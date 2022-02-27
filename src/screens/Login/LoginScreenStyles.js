@@ -1,3 +1,4 @@
+import IMAGES from '../../assets/Images';
 import COLORS from '../../utils/Colors'
 export const styles = {
   container: {
@@ -6,7 +7,8 @@ export const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column'
+    flexDirection: 'column',
+    backgroundImage: `url(${IMAGES.BACKGROUND})`
   },
   cardStyle: {
     width: '500px',

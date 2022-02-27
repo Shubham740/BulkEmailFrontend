@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 const Dashboard = () => {
   const history = useHistory();
 
-  
+
   const [isNavigatorOpen, setIsNavigatorOpen] = useState(false)
 
   const emailId = useSelector(state => state.LoginReducer.email)
@@ -24,7 +24,7 @@ const Dashboard = () => {
   },[emailId])
 
   return (<div >
-    
+      
     <AppBar position='static'>
       <div style={styles.parentView}>
         <CssBaseline />
